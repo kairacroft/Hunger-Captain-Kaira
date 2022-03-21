@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['*']
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = ['http://localhost:3000',
                         'http://127.0.0.1:3000',
+                        'https://hunger-captain-frontend1.herokuapp.com/'
 
                         ]
 
@@ -92,24 +93,24 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 # Heroku Database
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'd81p8l89vfgmdc',
-#         'USER': 'nesvhkdysfyxsb',
-#         'PORT': 5432,
-#         'HOST': 'ec2-44-198-196-149.compute-1.amazonaws.com',
-#         'PASSWORD': 'fa3e2fe0e91036d3175be0312d00c11ca9292baf1e85f401c413c61cf3f901a6',
-#     }
-# }
-
-# # Local Database
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd81p8l89vfgmdc',
+        'USER': 'nesvhkdysfyxsb',
+        'PORT': 5432,
+        'HOST': 'ec2-44-198-196-149.compute-1.amazonaws.com',
+        'PASSWORD': 'fa3e2fe0e91036d3175be0312d00c11ca9292baf1e85f401c413c61cf3f901a6',
     }
 }
+
+# # Local Database
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 # Heroku PostgreSQL Database
 django_heroku.settings(locals())
